@@ -11,4 +11,6 @@ In the second step, the ARP portfolio is built to which the Minimum Variance str
   - Momentum: -0.69%
   - Short Volatility: -0.83%<br>
 These results show that the level of maximal loss in a time horizon of 1 month and a probability of 1% is not too high. The highest loss probability we could encounter is in the quality factor but overall the portfolio is well distributed. One drawback of the VaR is that we cannot compute the magnitude of these losses that could be recorded beyond the confidence level of the VaR<br>
-'Then, using a non-parametric Monte-Carlo simulation we are able to estimate the distribution of the Value-at-Risk. Here, we consider 1000 simulations without any distribution assumption since bootstrap Monte-Carlo simulation is agnostic by nature.'
+
+
+Then, using a non-parametric Monte-Carlo simulation we are able to estimate the distribution of the Value-at-Risk. Here, we consider 1000 simulations without any distribution assumption since bootstrap Monte-Carlo simulation is agnostic by nature.
