@@ -25,6 +25,7 @@ Afterwards, so as to achieve a time-varying Value-at-Risk, we computed the ARMA 
 3. Subsequently we performed some specification tests on the residuals of the model, namely:
     - Normality test using Jarque-Bera
     - Serial correlation test using Ljung-Box<br>
+    
 and then we calculated the standardized residuals with the annualized conditional volatility<br>
 
 
