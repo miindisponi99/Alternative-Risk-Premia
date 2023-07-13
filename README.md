@@ -14,4 +14,18 @@ In the second step, the ARP portfolio is built to which the Minimum Variance str
 These results show that the level of maximal loss in a time horizon of 1 month and a probability of 1% is not too high. The highest loss probability we could encounter is in the quality factor but overall the portfolio is well distributed. One drawback of the VaR is that we cannot compute the magnitude of these losses that could be recorded beyond the confidence level of the VaR<br>
 
 
-Then, using a non-parametric Monte-Carlo simulation we are able to estimate the distribution of the Value-at-Risk. Here, we consider 1000 simulations without any distribution assumption since bootstrap Monte-Carlo simulation is agnostic by nature.
+Then, using a non-parametric Monte-Carlo simulation we are able to estimate the distribution of the Value-at-Risk. Here, we consider 1000 simulations without any distribution assumption since bootstrap Monte-Carlo simulation is agnostic by nature.<br>
+
+
+Indeed, we have not generated new returns based on a normal distribution as the aim is to resample existing returns to take into consideration the serial correlation properties and the true statistical properties of the unknown joint distributions. As aforementioned, the aim is to compute VaR for our portfolio and we reached 1000 simulations of Value-at-Risk with similar results to that computed before: -1.55% (average of the 1000 simulations). Obviously, this results always change due to random resampling but it is a valuable estimate of the VaR. After having computed the VaR we wanted to check the normality assumption with Jarque- Bera statistics and we reached quite high results in Value, Momentum and Short Volatility Factors. Furthermore, we compared the simulated correlation matrix to the real one and we saw similar results meaning that simulated returns were correctly associated to the original sample. Finally, we calculated the simulated and theoretical mean and variance of estimation errors with a 99% confidence interval and the results are almost matched meaning that overall the simulation is really valuable to compute our Value-at-Risk for the Minimum Variance ARP portfolio.<br>
+
+Afterwards, so as to achieve a time-varying Value-at-Risk, we computed the ARMA General Auto Regressive Conditional Heteroskedastic (GARCH) Model because we wanted to include the lags of the volatility. We made the following steps:
+1. Determine ARMA model with AR and MA orders to remove autocorrelation from returns (using 10 lags). We started with the identification of the model (that is, determination of q from the ACF and determination of p from the PACF)
+2. Then, we did a return diagnostic by computing the information criteria AIC and BIC in order to minimize them to then being able to start estimating the GARCH for the variance in order to remove the autocorrelation from the volatility too
+3. Subsequently we performed some specification tests on the residuals of the model, namely:
+    - Normality test using Jarque-Bera
+    - Serial correlation test using Ljung-Box<br>
+and then we calculated the standardized residuals with the annualized conditional volatility<br>
+
+
+We therefore calculated the time-varying VaR on the base of an ARMA GARCH model and we reached an average VaR of -4.34%. Ultimately, we then measured the accuracy of this Value- at-Risk and finally calculated the 95% confidence interval (low being: -6.71%, and high being: -2.67%).
