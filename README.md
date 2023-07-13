@@ -24,8 +24,8 @@ Afterwards, so as to achieve a time-varying Value-at-Risk, we computed the ARMA 
 2. Then, we did a return diagnostic by computing the information criteria AIC and BIC in order to minimize them to then being able to start estimating the GARCH for the variance in order to remove the autocorrelation from the volatility too
 3. Subsequently we performed some specification tests on the residuals of the model, namely:
     - Normality test using Jarque-Bera
-    - Serial correlation test using Ljung-Box<br>
-   and then we calculated the standardized residuals with the annualized conditional volatility<br>
+    - Serial correlation test using Ljung-Box<br><br>
+and then we calculated the standardized residuals with the annualized conditional volatility<br>
 
 
 We therefore calculated the time-varying VaR on the base of an ARMA GARCH model and we reached an average VaR of -4.34%. Ultimately, we then measured the accuracy of this Value- at-Risk and finally calculated the 95% confidence interval (low being: -6.71%, and high being: -2.67%).
