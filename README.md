@@ -3,13 +3,13 @@ The objective of this code is to estimate the Value-at-Risk of a portfolio compo
 In the second step, the ARP portfolio is built to which the Minimum Variance strategy is applied. Among the initial seven allocations, the ARP strategy allows us to select only four weighted factors, the first three which are part of the academic risk premia and the last one which is a trading risk premia. These factors are Value, Quality, Momentum, and Short Volatility. Therefore, the calculation of a long/short portfolio follows these steps:
 1. Carry out the stock ranking, calculating the average Z-score between that corresponding to a volatility of 1 year and that corresponding to a volatility of 2 years
 2. Build the ARP portfolio selecting the stocks that outperformed (considering as such those belonging to the first 2 deciles of the distribution) and those that underperformed (in this case considering that of the last 2 deciles of the distribution), the former ones are part of the “long” allocation and the latter are included in the “short” allocation. Then, using these stocks the next step is to:
-  - Calculate the weights of the long portfolio and those of the short portfolio by applying the Minimum Variance strategy computed before
-  - Determine the allocation between the long and short portfolios, applying a leverage constraint of 3x and using the hedge ratio to be beta neutral (ratio between the beta of the best performing factors and that of the least performing ones). In this example, Eurostoxx 50 is the benchmark and allows us to compute beta
+    - Calculate the weights of the long portfolio and those of the short portfolio by applying the Minimum Variance strategy computed before
+    - Determine the allocation between the long and short portfolios, applying a leverage constraint of 3x and using the hedge ratio to be beta neutral (ratio between the beta of the best performing factors and that of the least performing ones). In this example, Eurostoxx 50 is the benchmark and allows us to compute beta
 3. What we get is a portfolio that weights 4 factors out of the 7 total. We then calculate the Value-at-Risk on a monthly basis considering a confidence interval of 99% (therefore 1% left on the distribution tails) and using the corresponding Z (2.576) to find a VaR of the Minimum Variance ARP portfolio of -1.72%. For the different factors, we find a VaR of:
-  - Value: -1.85%
-  - Quality: -2.88%
-  - Momentum: -0.69%
-  - Short Volatility: -0.83%<br>
+    - Value: -1.85%
+    - Quality: -2.88%
+    - Momentum: -0.69%
+    - Short Volatility: -0.83%<br>
 These results show that the level of maximal loss in a time horizon of 1 month and a probability of 1% is not too high. The highest loss probability we could encounter is in the quality factor but overall the portfolio is well distributed. One drawback of the VaR is that we cannot compute the magnitude of these losses that could be recorded beyond the confidence level of the VaR<br>
 
 
